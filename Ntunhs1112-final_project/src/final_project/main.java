@@ -11,7 +11,7 @@ public class main {
 		Book b6 = new Book("English Now! Listening and Speaking in Everyday Life 3","高橋麻奈","978-626-300-055-1",2020,7);
 		Book b7 = new Book("資訊管理系統","董和昇","978-986-7696-39-7",2022,2);
 		Book b8 = new Book("Java最強入門邁向頂尖高手之路:王者歸來","洪錦魁","978-986-5501-58-7",2021,10);
-		Book b8 = new Book("Skills for Success","Colin S. Ward|Margot F. Gramer","978-0-19-490394-3",2021,10);
+		Book b9 = new Book("Skills for Success","Colin S. Ward|Margot F. Gramer","978-0-19-490394-3",2021,10);
 	}
 
 }
