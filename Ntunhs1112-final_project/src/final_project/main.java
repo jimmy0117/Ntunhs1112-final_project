@@ -1,5 +1,7 @@
 package final_project;
 
+import java.util.Scanner;
+
 public class main {
 
 	public static void main(String[] args) {
@@ -12,6 +14,28 @@ public class main {
 		Book b7 = new Book("資訊管理系統","董和昇","978-986-7696-39-7",2022,2);
 		Book b8 = new Book("Java最強入門邁向頂尖高手之路:王者歸來","洪錦魁","978-986-5501-58-7",2021,10);
 		Book b9 = new Book("Skills for Success","Colin S. Ward|Margot F. Gramer","978-0-19-490394-3",2021,10);
+		Scanner in = new Scanner(System.in);
+		while (true){
+			String borrowing[] = file.GetBorrowing();
+			String s = in.nextLine();
+			String cmd[] = s.split(" ");
+			switch (cmd[0]) {
+				case "/borrow":
+					if(ArrayTool.IndexOf(borrowing, cmd[1])==-1){
+						//寫檔案
+					}else{
+						System.out.println("此書已被借走");
+					}
+				case "/return":
+					if(ArrayTool.IndexOf(borrowing, cmd[1])!=-1){
+						//寫檔案
+					}else{
+						System.out.println("此書尚未租借");
+					}
+				default:
+					System.out.println("未知指令請重新輸入");
+			}
+		}
 	}
 
 }
