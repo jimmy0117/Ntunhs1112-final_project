@@ -16,7 +16,7 @@ public class main {
 		Book b9 = new Book("Skills for Success","Colin S. Ward|Margot F. Gramer","978-0-19-490394-3",2021,10);
 		Scanner in = new Scanner(System.in);
 		while (true){
-			String borrowing[] = file.GetBorrowing();
+			String borrowing[][] = file.GetBorrowing();
 			String s = in.nextLine();
 			String cmd[] = s.split(" ");
 			switch (cmd[0]) {
