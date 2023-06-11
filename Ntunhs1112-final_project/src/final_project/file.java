@@ -5,9 +5,9 @@ import java.util.ArrayList;
     public class file {
         public static void newBorrow(String s,Book b) {
             try {
-                BufferedWriter bw = new BufferedWriter(new FileWriter("Ntunhs1112-final_project/src/final_project/output.csv"));//檔案輸出路徑
+                BufferedWriter bufferWrite = new BufferedWriter(new FileWriter("Ntunhs1112-final_project/src/final_project/output.csv"));//檔案輸出路徑
                 String line = b.toString();
-                bw.write(s+" , "+line + "\n");
+                bufferWrite.write(s+" , "+line + "\n");
             } catch (IOException e) {
                 e.printStackTrace(); 
             }

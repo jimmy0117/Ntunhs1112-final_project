@@ -18,8 +18,8 @@ public class main {
 		Scanner in = new Scanner(System.in);
 		while (true){
 			String borrowing[][] = file.GetBorrowing();
-			String s = in.nextLine();
-			String cmd[] = s.split(" ");
+			String cmd_string = in.nextLine();
+			String cmd[] = cmd_string.split(" ");
 			switch (cmd[0]) {
 				case "/borrow":
 					if(ArrayTool.IndexOf(borrowing, cmd[2])==-1){
