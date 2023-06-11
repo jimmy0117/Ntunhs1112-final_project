@@ -24,17 +24,22 @@ public class main {
 				case "/borrow":
 					if(ArrayTool.IndexOf(borrowing, cmd[2])==-1){
 						file.newBorrow(cmd[0] , books_array[Integer.parseInt(cmd[1])]);
+						System.out.println("完成租借");
 					}else{
 						System.out.println("此書已被借走");
 					}
+					break;
 				case "/return":
 					if(ArrayTool.IndexOf(borrowing, cmd[2])!=-1){
 						file.newBorrow(cmd[0] , books_array[Integer.parseInt(cmd[1])]);
+						System.out.println("完成歸還");
 					}else{
 						System.out.println("此書尚未租借");
 					}
+					break;
 				default:
 					System.out.println("未知指令請重新輸入");
+					break;
 			}
 		}
 	}
