@@ -7,7 +7,7 @@ import java.util.Arrays;
     public class file {
         public static void newBorrow(String s,Book b) {
             try {
-                FileWriter filewrite = new FileWriter("Ntunhs1112-final_project/src/final_project/input.csv",true);
+                FileWriter filewrite = new FileWriter("Ntunhs1112-final_project/src/final_project/borrowing.csv",true);
                 BufferedWriter bufferWrite = new BufferedWriter(filewrite);//檔案輸出路徑
                 String line = b.toString();
                 bufferWrite.write(s+" , "+line + "\n");
@@ -21,12 +21,12 @@ import java.util.Arrays;
             String[][] input={{}};
             try {
                 ArrayList<String[]> input_list = new ArrayList<String[]>();
-                InputStreamReader isr = new InputStreamReader(new FileInputStream("Ntunhs1112-final_project/src/final_project/input.csv"));
+                InputStreamReader isr = new InputStreamReader(new FileInputStream("Ntunhs1112-final_project/src/final_project/borrowing.csv"));
                 BufferedReader reader = new BufferedReader(isr);
                 String line = null;
                 while((line=reader.readLine())!=null){
                         String row[] = line.split(",");
-                        System.out.println(String.join(" ",row));
+                        //System.out.println(String.join(" ",row));
                         input_list.add(row);
                 }
                 input = new String[input_list.size()][];
