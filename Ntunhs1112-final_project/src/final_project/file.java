@@ -7,10 +7,29 @@ import java.util.Arrays;
     public class file {
         public static void newBorrow(String s,Book b) {
             try {
-                FileWriter filewrite = new FileWriter("Ntunhs1112-final_project/src/final_project/borrowing.csv",true);
-                BufferedWriter bufferWrite = new BufferedWriter(filewrite);//檔案輸出路徑
+                FileWriter filewrite1 = new FileWriter("Ntunhs1112-final_project/src/final_project/history.csv",true);
+                BufferedWriter bufferWrite1 = new BufferedWriter(filewrite1);//檔案輸出路徑
+                FileWriter filewrite2 = new FileWriter("Ntunhs1112-final_project/src/final_project/borrowing.csv",true);
+                BufferedWriter bufferWrite2 = new BufferedWriter(filewrite2);//檔案輸出路徑
                 String line = b.toString();
-                bufferWrite.write(s+" , "+line + "\n");
+                bufferWrite1.write(s+" , "+line + "\n");
+                bufferWrite1.close();
+                bufferWrite2.write(line + "\n");
+                bufferWrite2.close();
+            } catch (IOException e) {
+                e.printStackTrace(); 
+            }
+        }
+        public static void BorrowingUpdate(String[][] s,Book b) {
+            try {
+                FileWriter filewrite = new FileWriter("Ntunhs1112-final_project/src/final_project/borrowing.csv",false);
+                BufferedWriter bufferWrite = new BufferedWriter(filewrite);//檔案輸出路徑
+                for (String[] strings : s) {
+                    if (!strings[2].trim().equals(b.ISBN.trim())) {
+                        System.out.printf("%s %s\n",strings[2],b.ISBN);
+                        bufferWrite.write(String.join(",",strings) + "\n");
+                    }
+                }
                 bufferWrite.close();
             } catch (IOException e) {
                 e.printStackTrace(); 

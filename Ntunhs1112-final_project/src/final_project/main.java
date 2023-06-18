@@ -20,6 +20,10 @@ public class main {
 			String borrowing[][] = file.GetBorrowing();
 			String cmd_string = in.nextLine();
 			String cmd[] = cmd_string.split(" ");
+			if(!books_array[Integer.parseInt(cmd[1])].ISBN.trim().equals(cmd[2])) {
+				System.out.println("ISBN碼不正確，請重新輸入");
+				continue;
+			}
 			switch (cmd[0]) {
 				case "/borrow":
 					if(ArrayTool.IndexOf(borrowing, cmd[2])==-1){
@@ -32,9 +36,15 @@ public class main {
 				case "/return":
 					if(ArrayTool.IndexOf(borrowing, cmd[2])!=-1){
 						file.newBorrow(cmd[0] , books_array[Integer.parseInt(cmd[1])]);
+						file.BorrowingUpdate(borrowing, books_array[Integer.parseInt(cmd[1])]);
 						System.out.println("完成歸還");
 					}else{
 						System.out.println("此書尚未租借");
+					}
+					break;
+				case "/borrowing":
+					for (String[] book_data : borrowing) {
+						System.err.println(String.join(",", book_data));
 					}
 					break;
 				default:
