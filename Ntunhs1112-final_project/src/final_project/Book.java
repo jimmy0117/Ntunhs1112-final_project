@@ -84,7 +84,7 @@ class Book_Technology extends Book {
 
     @Override
     public String toString() {
-        return String.format("%s , %s , %s , %s, %s, %d , %d", this.name, this.author, this.ISBN, this.type, this.version, this.date_Year, this.date_Month, this.format);
+        return String.format("%s , %s , %s , %s, %s, %d , %d", this.name, this.author, this.ISBN, this.type, this.version, this.date_Year, this.date_Month);
     }
 	
 }
