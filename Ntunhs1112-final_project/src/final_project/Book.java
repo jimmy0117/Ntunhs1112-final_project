@@ -6,6 +6,7 @@ public class Book {
 	public String ISBN;
 	public int date_Year;
 	public int date_Month;
+
 	Book(String name,String author,String ISBN,int year,int month){
 		this.name = name;
 		this.author = author;
@@ -13,6 +14,7 @@ public class Book {
 		this.date_Year = year;
 		this.date_Month = month;
 	}
+
 	Book(String name,String author,int[] ISBN,int year,int month){
 		this.name = name;
 		this.author = author;
@@ -21,10 +23,12 @@ public class Book {
 		this.date_Year = year;
 		this.date_Month = month;
 	}
+
 	@Override
 	public String toString() {
 		return String.format("%s , %s , %s , %d , %d", this.name,this.author,this.ISBN,this.date_Year,this.date_Month);
 	}
+	
 }
 
 class Book_Language extends Book {
@@ -70,6 +74,7 @@ class Book_Math extends Book {
 		}
 		return false;
 	}
+
 }
 
 class Book_Technology extends Book {
