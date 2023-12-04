@@ -8,20 +8,32 @@ public class Book {
 	public int date_Month;
 
 	Book(String name,String author,String ISBN,int year,int month){
-		this.name = name;
-		this.author = author;
-		this.ISBN = ISBN;
-		this.date_Year = year;
-		this.date_Month = month;
+		try {
+			this.name = name;
+			this.author = author;
+			this.ISBN = ISBN;
+			this.date_Year = year;
+			this.date_Month = month;
+		} catch (Exception e) {
+			this.name = "Error Book";
+			System.out.println("Error:" + e.getMessage());
+		}
+		
 	}
 
 	Book(String name,String author,int[] ISBN,int year,int month){
-		this.name = name;
-		this.author = author;
-		this.ISBN = "";
-		for(int i=0;i<4;i++) {this.ISBN += String.valueOf(ISBN[i]);}
-		this.date_Year = year;
-		this.date_Month = month;
+		try {
+			this.name = name;
+			this.author = author;
+			this.ISBN = "";
+			for(int i=0;i<4;i++) {this.ISBN += String.valueOf(ISBN[i]);}
+			this.date_Year = year;
+			this.date_Month = month;
+		} catch (Exception e) {
+			this.name = "Error Book";
+			System.out.println("Error:" + e.getMessage());
+		}
+		
 	}
 
 	@Override
@@ -35,7 +47,12 @@ class Book_Language extends Book {
 	public String lan = "";
     public Book_Language(String name, String author, String ISBN, int year, int month, String lan) {
         super(name, author, ISBN, year, month);
-        this.lan = lan;
+		try {
+			this.lan = lan;
+		} catch (Exception e) {
+			this.name = "Error Book_Language";
+			System.out.println("Error:" + e.getMessage());
+		}
     }
 
     @Override
@@ -50,8 +67,14 @@ class Book_Math extends Book {
 	public String[] before;
     public Book_Math(String name, String author, String ISBN, int year, int month, String key,String before_string) {
         super(name, author, ISBN, year, month);
-        this.key = key;
-		this.before = before_string.split(" ");
+		try {
+			this.key = key;
+			this.before = before_string.split(" ");
+		} catch (Exception e) {
+			this.name = "Error Book_Math";
+			System.out.println("Error:" + e.getMessage());
+		}
+        
     }
 
     @Override
@@ -83,8 +106,14 @@ class Book_Technology extends Book {
 	String version = "";
     public Book_Technology(String name, String author, String ISBN, int year, int month, String type, String version) {
         super(name, author, ISBN, year, month);
-        this.type = type;
-		this.version = version;
+		try {
+			this.type = type;
+			this.version = version;
+		} catch (Exception e) {
+			this.name = "Error Book_Technology";
+			System.out.println("Error:" + e.getMessage());
+		}
+        
     }
 
     @Override
