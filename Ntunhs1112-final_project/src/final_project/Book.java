@@ -36,8 +36,8 @@ public class Book {
 		
 	}
 
-	@Override
-	public String toString() {
+	//@Override
+	public String toString_info() {
 		return String.format("%s , %s , %s , %d , %d", this.name,this.author,this.ISBN,this.date_Year,this.date_Month);
 	}
 	
@@ -55,8 +55,8 @@ class Book_Language extends Book {
 		}
     }
 
-    @Override
-    public String toString() {
+    //@Override
+    public String toString_info() {
         return String.format("%s , %s , %s , %s , %d , %d", this.name, this.author, this.ISBN, this.lan, this.date_Year, this.date_Month);
     }
 
@@ -77,8 +77,8 @@ class Book_Math extends Book {
         
     }
 
-    @Override
-    public String toString() {
+    //@Override
+    public String toString_info() {
         return String.format("%s , %s , %s , %s , %s , %d , %d", this.name, this.author, this.ISBN, this.key, this.date_Year, this.date_Month);
     }
 
@@ -116,8 +116,8 @@ class Book_Technology extends Book {
         
     }
 
-    @Override
-    public String toString() {
+    //@Override
+    public String toString_info() {
         return String.format("%s , %s , %s , %s, %s, %d , %d", this.name, this.author, this.ISBN, this.type, this.version, this.date_Year, this.date_Month);
     }
 	

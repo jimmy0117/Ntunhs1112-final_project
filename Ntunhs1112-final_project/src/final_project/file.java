@@ -14,6 +14,7 @@ import java.util.Date;
                 FileWriter filewrite2 = new FileWriter("Ntunhs1112-final_project/src/final_project/borrowing.csv",true);
                 BufferedWriter bufferWrite2 = new BufferedWriter(filewrite2);//檔案輸出路徑
                 String line = b.toString();
+                System.out.println(s+" , "+line +" , "+ formatter.format(date) + "\n");
                 bufferWrite1.write(s+" , "+line +" , "+ formatter.format(date) + "\n");
                 bufferWrite1.close();
                 bufferWrite2.write(line + "\n");
