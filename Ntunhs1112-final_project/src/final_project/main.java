@@ -24,6 +24,9 @@ public class main {
 			String borrowing[][] = file.GetBorrowing();
 			String cmd_string = in.nextLine();
 			String cmd[] = cmd_string.split(" ");
+			if(cmd[0].equals("/exit")){
+				System.exit(0);
+			}
 			if(!books_array[Integer.parseInt(cmd[1])].ISBN.trim().equals(cmd[2])) {
 				System.out.println("ISBN碼不正確，請重新輸入");
 				continue;
@@ -52,7 +55,12 @@ public class main {
 					}
 					break;
 				case "/info":
-				
+					if(ArrayTool.IndexOf(borrowing, cmd[2])!=-1){
+						System.out.println("書本資訊\n"+books_array[Integer.parseInt(cmd[1])].toString_info());
+					}else{
+						System.out.println("此書尚未登陸");
+					}
+					break;
 				default:
 					System.out.println("未知指令請重新輸入");
 					break;
