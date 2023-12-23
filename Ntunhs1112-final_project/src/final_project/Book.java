@@ -23,7 +23,7 @@ public class Book {
 	}
 	@Override
 	public String toString() {
-		return String.format("%s , %s , %s , %d , %d", this.name,this.author,this.ISBN,this.date_Year,this.date_Month);
+		return String.format("書名:%s\n作者:%s\nISBN:%s\n出版年:%d\n出版月%d", this.name,this.author,this.ISBN,this.date_Year,this.date_Month);
 	}
 }
 
@@ -36,7 +36,7 @@ class Book_Language extends Book {
 
     @Override
     public String toString() {
-        return String.format("%s , %s , %s , %s , %d , %d", this.name, this.author, this.ISBN, this.lan, this.date_Year, this.date_Month);
+        return String.format("書名:%s\n作者:%s\nISBN:%s\n出版年:%d\n出版月%d", this.name,this.author,this.ISBN,this.date_Year,this.date_Month);
     }
 
 }
@@ -52,7 +52,7 @@ class Book_Math extends Book {
 
     @Override
     public String toString() {
-        return String.format("%s , %s , %s , %s , %s , %d , %d", this.name, this.author, this.ISBN, this.key, this.date_Year, this.date_Month);
+        return String.format("書名:%s\n作者:%s\nISBN:%s\n關鍵字:%s\n出版年:%d\n出版月%d", this.name,this.author,this.ISBN,this.key,this.date_Year,this.date_Month);
     }
 
 	public String[] getBefore(boolean output){
@@ -84,7 +84,7 @@ class Book_Technology extends Book {
 
     @Override
     public String toString() {
-        return String.format("%s , %s , %s , %s, %s, %d , %d", this.name, this.author, this.ISBN, this.type, this.version, this.date_Year, this.date_Month);
+        return String.format("書名:%s\n作者:%s\nISBN:%s\n語言:%s\n版本:%s\n出版年:%d\n出版月:%d\n", this.name, this.author, this.ISBN, this.type, this.version, this.date_Year, this.date_Month);
     }
 	
 }
