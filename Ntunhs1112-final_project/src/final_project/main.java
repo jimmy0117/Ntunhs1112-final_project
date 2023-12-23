@@ -55,11 +55,9 @@ public class main {
 					}
 					break;
 				case "/info":
-					if(ArrayTool.IndexOf(borrowing, cmd[2])!=-1){
+					
 						System.out.println("書本資訊\n"+books_array[Integer.parseInt(cmd[1])].toString_info());
-					}else{
-						System.out.println("此書尚未登陸");
-					}
+					
 					break;
 				default:
 					System.out.println("未知指令請重新輸入");
