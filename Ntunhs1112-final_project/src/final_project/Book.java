@@ -42,7 +42,7 @@ public class Book {
 	
 	public String toString_info(){
 		return String.format("書名：%s\n作者:%s\nISBN:%s\n出版年:%d\n出版月:%d", this.name,this.author,this.ISBN,this.date_Year,this.date_Month);
-		}
+	}
 	
 }
 
